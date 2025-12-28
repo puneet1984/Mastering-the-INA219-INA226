@@ -172,3 +172,7 @@ The INA226 is an incredible tool, but it is only as good as the hardware around 
 If you decide to fabricate this board, let me know in the comments how you used it!
 
 Happy Making!
+
+check out
+
+https://hackaday.io/project/204686-mastering-the-ina219-ina226
