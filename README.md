@@ -71,12 +71,42 @@ Key design improvements:
 
 ## PCB Fabrication — JLCPCB
 
-This board was fabricated through JLCPCB, a global PCB manufacturer.
+### Project Fabrication: Made Possible by JLCPCB
 
-- 👉 Order: https://jlcpcb.com/?from=DPM
-- $2 for 5 PCBs
-- Fast turnaround with strong silkscreen and solder mask quality
-- SMT assembly and advanced board options available
+This project became reality thanks to [JLCPCB](https://jlcpcb.com/?from=DPM), a leading quick-turn PCB manufacturer trusted by hobbyists and engineers alike. Their rapid turnaround and consistent quality made them an ideal partner for fabricating the custom boards used here.
+
+### Why We Chose JLCPCB
+
+- Reliable production with professional finishes ready for immediate testing
+- Accessible pricing — standard 1–4 layer PCBs start at just $2 for five boards
+- High-quality outputs featuring sharp silkscreens, aligned solder masks, and clean drill hits
+
+### Beyond Basic PCBs
+
+[JLCPCB](https://jlcpcb.com/?from=DPM) has grown into a one-stop prototyping platform with:
+
+- Advanced PCB options including high-frequency, flexible, and rigid-flex stacks
+- SMT assembly services that accept BOM and pick-and-place files for turnkey builds
+- Industrial-grade 3D printing (SLA, SLS, MJF) and CNC machining for mechanical parts
+
+The collaborative experience deliver boards that worked on the first assembly pass, keeping the build schedule on track.
+
+### How to Order This PCB
+
+1. **Get the design files**: Download the Gerber ZIP archive from the project repository (look for Gerber_ProjectName).
+2. **Upload to JLCPCB**: Visit [JLCPCB](https://jlcpcb.com/?from=DPM) and click Instant Quote, then drag the ZIP file into the uploader. Their tooling auto-detects dimensions and layer count.
+3. **Choose settings**: We used the defaults — 2 layers, auto dimensions, green solder mask (fastest), and a quantity of 5 boards.
+4. **Review and checkout**: Open Gerber Viewer to confirm the render, save to cart, and complete payment.
+5. **Track delivery**: [JLCPCB](https://jlcpcb.com/?from=DPM) typically finishes fabrication within 24 hours, with shipment arriving in a few days depending on carrier.
+
+Watch the [ordering process walkthrough](https://youtu.be/2KFvhB9MCYs) for a visual guide to the [JLCPCB](https://jlcpcb.com/?from=DPM) workflow.
+
+### Quick Facts
+
+- 👉 Order: [JLCPCB](https://jlcpcb.com/?from=DPM)
+- $2 for 5 PCBs with quick-turn production
+- Fast turnaround backed by crisp silkscreens and solder mask alignment
+- SMT assembly, advanced PCB options, and mechanical fabrication under one portal
 
 ## Implementation
 
@@ -95,12 +125,20 @@ This board was fabricated through JLCPCB, a global PCB manufacturer.
 - INA219: Adafruit_INA219
 - INA226: INA226_WE, RobTillaart/INA226
 
-### Example
+### INA226 Libraries
+
+- INA226_WE (by Wolfgang Ewald)
+- RobTillaart/INA226
+
+Usage examples:
 
 ```cpp
-ina226.setResistorRange(0.005, 15.0);
-```
+// INA226_WE: provide shunt resistance (Ohms) and expected max current (Amps)
+ina226.setResistorRange(shuntResistance, maxCurrent);
 
+// RobTillaart/INA226: same values, swapped argument order
+ina.setMaxCurrentShunt(maxCurrent, shuntResistance);
+```
 ## Conclusion
 
 The INA226 delivers lab-grade accuracy when:
